@@ -1,0 +1,4 @@
+*.txt
+*.project
+*.mk
+Release/
