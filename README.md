@@ -62,7 +62,7 @@ GCC compiler
   }
   ```
   <br />
-- [ ] Testing user input to make sure that it is the appropriate data
+- [ ] Testing user input to make sure that the user is giving the required type of data when prompted
 
   For the guessing game:
   ```cpp
