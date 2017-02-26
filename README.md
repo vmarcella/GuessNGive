@@ -21,8 +21,8 @@ A simple game I made to put what I've learned about C++ so far into use.
 ###February 24, 2017;'
 
 ##Some things I'd like to improve are...
-*###Developing an algorithm for the computer to come up with actual guesses. The only real random number that is actually a "guess" by the computer is the first one generated, which is done with this line of code:
+*Developing an algorithm for the computer to come up with actual guesses. The only real random number that is actually a "guess" by the computer is the first one generated, which is done with this line of code:
 
-'''cpp
+```cpp
 int secretNumber = (rand() % 100) + 1;
-'''
+```
