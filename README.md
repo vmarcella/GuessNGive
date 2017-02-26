@@ -64,4 +64,11 @@ GCC compiler
   <br />
 - [ ] Modularizing the code.
   The functionality of the entire program exists inside the main function. I think that's kind of enough said.
+   <br />
+- [ ] Commenting on code
+  Is there a better system I could adopt in order to create cleaner comments?
+
+##Notes
+####February 26th, 2017
+  This is simply just a project to help me Develop my skills in C++. I am fairly new to the language and have just started teaching myself again. Any Feedback/critism on what I am doing right/wrong would be greatly appreciated. 
 

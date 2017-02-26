@@ -16,7 +16,8 @@ using namespace std;
 
 int main()
 {
-	//Seed our random number generator
+	//Seed the random number generator using the current time
+	//and then casting it 
 	srand(static_cast<unsigned int>(time(0)));
 	
 	//gameRunning - Whether our program is running or not
