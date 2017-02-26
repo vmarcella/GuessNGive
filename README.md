@@ -61,6 +61,7 @@ GCC compiler
     computerGuess += ((rand() % (secretNumber - computerGuess)) + 1);						
   }
   ```
+  <br />
 - [ ] Modularizing the code.
   The functionality of the entire program exists inside the main function. I think that's kind of enough said.
 
