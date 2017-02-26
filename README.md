@@ -24,7 +24,7 @@ February 24, 2017
 GCC compiler
 
 ##Some things I'd like to improve are...
-- Implementing an algorithm for the computer to come up with more realistic guesses. 
+- [ ] Implementing an algorithm for the computer to come up with more realistic guesses. 
   The only random number that is actually a "guess" by the computer is the first one generated. 
   
   Since the rules of our guessing game state that the secret number has to be within the range of 1-100, we take the remainder of the randomly generated number divided by 100. 
@@ -47,13 +47,9 @@ GCC compiler
 
   We subtract the computers previous guess from secret number to get the "distance" from the computers number to the number it's trying to guess. Although it does end up guessing the secret number pretty quickly, it's technically cheating since it's calculation is dependent on knowing the secret number.
 
-  I'd like to eliminate the current algorithms dependency on knowing the secret number the user has given and instead calculate the result solely off of the knowledge of it's previous guesses like another person would do.
+  I'd like to eliminate the dependency on knowing the secret number the user has given and instead calculate the result solely off of the knowledge of it's previous guesses like how another human would do.
 
   Here is how I implemented the evaluation: 
-
-  ```cpp
-  computerGuess -=  ((rand() % (computerGuess - secretNumber)) + 1);
-  ```   
 
   ```cpp
   if(tooHigh)
@@ -61,11 +57,11 @@ GCC compiler
   	computerGuess -=  ((rand() % (computerGuess - secretNumber)) + 1);
   	tooHigh = false;
   }
-	else
+  else
   {	
     computerGuess += ((rand() % (secretNumber - computerGuess)) + 1);						
   }
   ```
-- Modularizing the code.
+- [ ] Modularizing the code.
   The functionality of the entire program exists inside the main function. I think that's kind of enough said.
 
