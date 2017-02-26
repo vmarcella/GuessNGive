@@ -62,6 +62,57 @@ GCC compiler
   }
   ```
   <br />
+- [ ] Testing user input to make sure that it is the appropriate data
+
+  For the guessing game:
+  ```cpp
+  tries++;
+  
+  cout << "Guess:";
+  cin >> yourNumber;
+					
+  if (yourNumber != secretNumber)
+  {
+  	if (yourNumber > secretNumber)
+	{
+		cout << "You guessed " << yourNumber << " which is too high! Please guess again!" << endl;
+	}
+	else if (yourNumber < secretNumber)
+	{
+		cout << "You guessed " << yourNumber << " which is too low! Please guess again!" << endl;
+	}
+	continue;
+	}
+	else
+	{
+		cout << secretNumber << ", That's correct! You guessed the number in " << tries << "tries!" << endl;
+		correctGuess = true;
+	}
+  ```
+  For the giving game:
+  ```cpp
+    while(!numEntered)
+	{
+		cout << "Welcome to Give the number!" << endl;
+		cout << "In this game, you have to create a secre number for the computer to guess!" << endl;
+		cout << "The number has to be inbetween 1 and 100!" << endl;
+		cout << "Start now!" << endl;
+		cout << "Enter a secret number:";
+		cin >> secretNumber;
+					
+		if (secretNumber > 100 || secretNumber < 0)
+		{
+			cout << "Your number is out of bounds! Please try again!" << endl;
+		}
+		else if (secretNumber <= 100 && secretNumber >= 1)
+		{
+			numEntered = true;
+		}
+	}
+  ```
+
+  As you can see, giving either game a value other than an integer will cause it to do things that aren't intended and may potentially break it. 
+  <br />
 - [ ] Modularizing the code.
   
   The functionality of the entire program exists inside the main function. I think that's kind of enough said.
