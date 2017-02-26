@@ -24,8 +24,7 @@ February 24, 2017
 GCC compiler
 
 ##Some things I'd like to improve are...
-- [ ] Implementing an algorithm for the computer to come up with more realistic guesses. 
-  The only random number that is actually a "guess" by the computer is the first one generated. 
+- [ ] Implementing an algorithm for the computer to come up with more realistic guesses. The only random number that is actually a "guess" by the computer is the first one generated. 
   
   Since the rules of our guessing game state that the secret number has to be within the range of 1-100, we take the remainder of the randomly generated number divided by 100. 
 
