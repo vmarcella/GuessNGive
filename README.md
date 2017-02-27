@@ -5,9 +5,9 @@ A simple game I made to put what I've learned about C++ so far into use.
 
 ##The game has two different game modes you can play:
 1. Guessing game
-	*The computer generates a random number between the numbers 1 and 100 which you have to guess
+	* The computer generates a random number between the numbers 1 and 100 which you have to guess
 2. Giving game
-	*You give the computer a number between 1 and 100 and then the computer tries and guesses it	
+	* You give the computer a number between 1 and 100 and then the computer tries and guesses it	
 
 ##It demonstrates mostly the use of...
 - Conditional statements

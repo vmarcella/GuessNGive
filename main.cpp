@@ -24,7 +24,7 @@ int main()
 	bool gameRunning = true;
 	
 	//Possible states our game can be in.
-	bool menuState;
+	bool menuState = false;
 	bool guessState = false;
 	bool giveState = false;
 	
@@ -35,7 +35,7 @@ int main()
 	bool nameEntered = false;
 	
 	string name;
-	cout << "Welcome to the advanced guess my number game!" << endl;
+	cout << "Welcome to the Guess/Give a number game!" << endl;
 	
 	//Start the game loop
 	while(gameRunning)
@@ -79,7 +79,7 @@ int main()
 				cout <<  "You typed in an incorrect choice, try again!" << endl;
 				continue;
 			}
-		}
+		}//End of while(menuState) loop.
 	
 		//Guessing game loop
 		while(guessState)
