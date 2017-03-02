@@ -1,5 +1,13 @@
 #GuessNGive
 
+##Index
+###1. [Details](#Details)
+###2. [Demonstrates the use of](#it-demonstrates-mostly-the-use-of)
+###3. [Project timeline](#i-started-working-on-this-project)
+###4. [Compiler](#this-project-is-compiled-with)
+###5. [Desired Improvements](some-things-id-like-to-improve-are)
+###6. [Notes](#notes)
+
 ##Details
 A simple game I made to put what I've learned about C++ so far into use. 
 
@@ -24,7 +32,7 @@ February 24, 2017
 GCC compiler
 
 ##Some things I'd like to improve are...
-- [ x ] Implementing an algorithm for the computer to come up with more realistic guesses. The only random number that is actually a "guess" by the computer is the first one generated. 
+- [x] Implementing an algorithm for the computer to come up with more realistic guesses. The only random number that is actually a "guess" by the computer is the first one generated. 
   
   Since the rules of our guessing game state that the secret number has to be within the range of 1-100, we take the remainder of the randomly generated number divided by 100. 
 
@@ -104,7 +112,7 @@ GCC compiler
 	}
   ```
   
-  I explain the what's going on within the cpp file. If you'd like more information on how the binary search algorithm works, here is the [Wiki](https://en.wikipedia.org/wiki/Binary_search_algorithm)
+  I explain the what's going on within the cpp file. If you'd like more information on how the binary search algorithm works, [here is the Wiki](https://en.wikipedia.org/wiki/Binary_search_algorithm).
   <br />
 - [ ] Testing user input to make sure that the user is giving the required type of data when prompted
 
@@ -169,5 +177,5 @@ GCC compiler
 ####February 26th, 2017
   This is simply just a project to help me Develop my skills in C++. I am fairly new to the language and have just started teaching myself again. Any Feedback/critism on what I am doing right/wrong would be greatly appreciated. 
 ####March 1st, 2017
-  The giving game's bot now guesses your number using the[binary search algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm) Plan to modularize the code tomorrow and look into securing the program from taking in user input that isn't of the required type.
+  The giving games bot now guesses your number using the [binary search algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm). I also specified which items I'll be using from the std rather than including the entire namespace. Plan to modularize the code tomorrow and look into securing the program from taking in user input that isn't of the required type.
 
