@@ -69,7 +69,7 @@ GCC compiler
     computerGuess += ((rand() % (secretNumber - computerGuess)) + 1);						
   }
   ```
-  ####Resolved
+  ####Resolved (March 1st, 2017)
   The computer now guesses the your secret number using the binary search algorithm. Here is my new implementation:
 
   ```cpp
