@@ -24,7 +24,7 @@ February 24, 2017
 GCC compiler
 
 ##Some things I'd like to improve are...
-- [ ] Implementing an algorithm for the computer to come up with more realistic guesses. The only random number that is actually a "guess" by the computer is the first one generated. 
+- [ x ] Implementing an algorithm for the computer to come up with more realistic guesses. The only random number that is actually a "guess" by the computer is the first one generated. 
   
   Since the rules of our guessing game state that the secret number has to be within the range of 1-100, we take the remainder of the randomly generated number divided by 100. 
 
@@ -61,6 +61,50 @@ GCC compiler
     computerGuess += ((rand() % (secretNumber - computerGuess)) + 1);						
   }
   ```
+  ####Resolved
+  The computer now guesses the your secret number using the binary search algorithm. Here is my new implementation:
+
+  ```cpp
+
+	int lowerBoundary = 1;
+	int upperBoundary = 99;
+	int computerGuess;
+				
+	while(!computerCorrect)
+	{
+					
+		computerTries++;
+					
+		if(lowerBoundary > upperBoundary)
+		{
+			cout << "Search has terminated as unseccessful, is your set ordered?" << endl;
+			return 0;
+		}
+					
+		computerGuess = (lowerBoundary + upperBoundary) / 2;
+				
+		if(computerGuess < secretNumber)
+		{
+			cout << "The computer has guessed the number " << computerGuess << ", which is too low!" << endl;
+			
+			lowerBoundary = (computerGuess + 1);
+		}
+		else if (computerGuess > secretNumber)
+		{
+			cout << "The computer has guessed the number " << computerGuess << ", which is too high!" << endl;
+			
+			upperBoundary = (computerGuess - 1);
+		}
+		else
+		{
+			cout << "Congratulations, the computer guessed the number " << computerGuess << " in " << computerTries << " tries." << endl;
+			
+			computerCorrect = true;
+		}
+	}
+  ```
+  
+  I explain the what's going on within the cpp file. If you'd like more information on how the binary search algorithm works, here is the [Wiki](https://en.wikipedia.org/wiki/Binary_search_algorithm)
   <br />
 - [ ] Testing user input to make sure that the user is giving the required type of data when prompted
 
@@ -124,4 +168,6 @@ GCC compiler
 ##Notes
 ####February 26th, 2017
   This is simply just a project to help me Develop my skills in C++. I am fairly new to the language and have just started teaching myself again. Any Feedback/critism on what I am doing right/wrong would be greatly appreciated. 
+####March 1st, 2017
+  The giving game's bot now guesses your number using the[binary search algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm) Plan to modularize the code tomorrow and look into securing the program from taking in user input that isn't of the required type.
 

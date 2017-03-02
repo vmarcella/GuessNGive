@@ -175,60 +175,54 @@ int main()
 					}
 				}//End of while(!numEntered) loop
 		
-				numEntered = false; //Reset the value of this boolean
+				//Reset the value of this boolean
+				numEntered = false; 
 				
-				int computerGuess = (rand() % 100) + 1;  //Generate a random number from 1-100 for the first guess
-				int computerTries = 0;					 //number of tries it takes the computer to guess your number.
+				//Keep track of how many guesses the computer has made and if the computer's guess is correct.
+				int computerTries = 0;
+				bool computerCorrect = false; 
 				
-				bool tooHigh = false;         //Let's the program know if the computer's guess is higher than the secret number
-				bool computerCorrect = false; //Let's the program know when the computer has guessed the correct number 
+				
+				//Variables used to keep track of the search boundaries and the computer's guess.
+				int lowerBoundary = 1;
+				int upperBoundary = 99;
+				int computerGuess;
 				
 				//While the computer hasn't guessed your number...
 				while(!computerCorrect)
 				{
 					computerTries++;
-					bool numberGenerated = false;
-			
-					//Evaluate if the computer's guess is greater than, less than, or equal to the secret number.
-					if (computerGuess > secretNumber)
+					
+					//If the lower bound is higher than the upperbound, terminate the search as the set isn't sorted.
+					if(lowerBoundary > upperBoundary)
 					{
-						cout << "the bot guessed " << computerGuess << " which was too high!" << endl;
-						tooHigh = true;
+						cout << "Search has terminated as unseccessful, is your set ordered?" << endl;
+						return 0;
 					}
-					else if (computerGuess < secretNumber)
+					
+					//The computers guess is the sum of both bounds divided by 2.
+					//The computers first guess will always be 50, since that is the midpoint of 1-100
+					computerGuess = (lowerBoundary + upperBoundary) / 2;
+				
+					//If the computers number is less than the secret number,
+					//set the lower bound to the last guess plus 1.
+					//If it is greater than the secret number,
+					//set the upper bound to the last guess minus 1.
+					if(computerGuess < secretNumber)
 					{
-						cout << "the bot guessed " << computerGuess << " which was too low!" << endl;
+						cout << "The computer has guessed the number " << computerGuess << ", which is too low!" << endl;
+						lowerBoundary = (computerGuess + 1);
 					}
-					else if (computerGuess == secretNumber)
+					else if (computerGuess > secretNumber)
 					{
+						cout << "The computer has guessed the number " << computerGuess << ", which is too high!" << endl;
+						upperBoundary = (computerGuess - 1);
+					}
+					else
+					{
+						cout << "Congratulations, the computer guessed the number " << computerGuess << " in " << computerTries << " tries." << endl;
 						computerCorrect = true;
-						break;
 					}
-					
-					//While the computer has not generated a number for the game...
-					while(!numberGenerated)
-					{
-						//Calculate the next guess based on whether or not the previous guess
-						//was higher than the secret number or lower than the secret number.
-						if(tooHigh)
-						{
-							computerGuess -=  ((rand() % (computerGuess - secretNumber)) + 1);
-							tooHigh = false;
-						}
-						else
-						{
-							computerGuess += ((rand() % (secretNumber - computerGuess)) + 1);
-						}
-					
-						//The bot's number must stay in this range
-						if(computerGuess < 0 || computerGuess > 100){
-							continue;
-						}
-						else
-						{
-							numberGenerated = true;
-						}
-					}//End of while(!numberGenerated) loop
 				}//End of while(!computerCorrect) loop
 				
 				cout << "The bot guessed your numbers in " << computerTries << " tries!" << endl;
